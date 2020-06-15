@@ -5,9 +5,9 @@ module.exports.run = async (bot, message, args) => {
 
 
 // !clear aantal
-if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Jij kan dit lekker niet HAHA !");
+if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Jij kan dit lekker niet HAHA !").then(msg => msg.delete({timeout: 3000}));
 
-if (!args[0]) return message.reply("Geef een aantal op dat je wilt verwijderen zebi !");
+if (!args[0]) return message.reply("Geef een aantal op dat je wilt verwijderen zebi !").then(msg => msg.delete({timeout: 3000}));
 
 if (Number.isInteger(parseInt(args[0]))) {
 
