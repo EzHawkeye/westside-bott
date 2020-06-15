@@ -6,7 +6,7 @@ const fs = require("fs");
 const bot = new discord.Client();
 bot.commands = new discord.Collection();
 
-fs.readdir("./commands/" ,(err, files) => {
+fs.readdir("./commands/", (err, files) => {
 
     if (err) console.log(err);
 
@@ -14,9 +14,9 @@ fs.readdir("./commands/" ,(err, files) => {
 
     if (jsFiles.length <= 0) {
         console.log("Kon geen files vinden");
-         return;
+        return;
     }
- 
+
     jsFiles.forEach((f, i) => {
 
         var fileGet = require(`./commands/${f}`);
@@ -33,7 +33,7 @@ bot.on("ready", async () => {
 
     console.log(`${bot.user.username} is online!`);
 
-    bot.user.setActivity("WestSide RP", { type: "PLAYING" });
+    bot.user.setActivity("🛠️ Hawk Dev", { type: "PLAYING" });
 
 })
 
@@ -52,24 +52,25 @@ bot.on("message", async message => {
     var command = messageArray[0];
 
     if(!message.content.startsWith(prefix)) return;
-    
+
     var arguments = messageArray.slice(1);
 
 
     var commands = bot.commands.get(command.slice(prefix.length));
 
-    if(commands) commands.run(bot,message, arguments);
+    if (commands) commands.run(bot, message, arguments);
 
 
 
 
 
 
-    
 
 
 
-}); 
+
+
+});
 
 
 bot.login(process.env.token);
