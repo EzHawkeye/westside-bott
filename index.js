@@ -33,7 +33,7 @@ bot.on("ready", async () => {
 
     console.log(`${bot.user.username} is online!`);
 
-    bot.user.setActivity("🛠️ Hawk Dev", { type: "PLAYING" });
+    bot.user.setActivity(":video_game: WestSide RP", { type: "PLAYING" });
 
 })
 
