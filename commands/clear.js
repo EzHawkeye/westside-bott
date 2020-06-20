@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
 
 
 // !clear aantal
-if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Jij kan dit lekker niet HAHA !").then(msg => msg.delete({timeout: 3000}));
+if (!message.member.hasPermission("MANAGE_GUILD")) return message.reply("Jij kan dit lekker niet HAHA !").then(msg => msg.delete({timeout: 3000}));
 
 if (!args[0]) return message.reply("Geef een aantal op dat je wilt verwijderen zebi !").then(msg => msg.delete({timeout: 3000}));
 
